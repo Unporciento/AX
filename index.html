@@ -1,371 +1,361 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homenaje a Rauliman y Los Generales R&R, pioneros del Rap en Colombia desde Buenaventura.">
-    <title>Rauliman: El Pionero del Rap Colombiano</title>
-    <style>
-        :root {
-            --primary-color: #ffcc00; /* Amarillo vibrante */
-            --secondary-color: #1a1a1a; /* Negro suave */
-            --accent-color: #e63946; /* Rojo para énfasis */
-            --text-light: #f1f1f1;
-            --text-dark: #333;
-            --bg-dark: #121212;
-            --bg-card: #1e1e1e;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Header / Hero Section */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1525362081669-2b476bbd5ce3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Imagen genérica de estilo urbano/vinilo */
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 20px;
-        }
-
-        header h1 {
-            font-size: 4rem;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
-
-        header h2 {
-            font-size: 1.5rem;
-            font-weight: 300;
-            margin-bottom: 20px;
-        }
-
-        header .badge {
-            background-color: var(--accent-color);
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-        }
-
-        /* Navigation */
-        nav {
-            background-color: var(--secondary-color);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Main Content Containers */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        h3 {
-            font-size: 2.5rem;
-            border-bottom: 3px solid var(--primary-color);
-            display: inline-block;
-            margin-bottom: 30px;
-            color: var(--text-light);
-        }
-
-        /* Biography Section */
-        .bio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 30px;
-        }
-
-        @media(min-width: 768px) {
-            .bio-grid {
-                grid-template-columns: 1fr 1fr;
-                align-items: center;
-            }
-        }
-
-        .bio-text p {
-            margin-bottom: 15px;
-            font-size: 1.1rem;
-            color: #ccc;
-        }
-
-        .highlight {
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* Group Section - Los Generales */
-        .group-card {
-            background-color: var(--bg-card);
-            padding: 30px;
-            border-radius: 10px;
-            border-left: 5px solid var(--accent-color);
-        }
-
-        .members-list {
-            list-style: none;
-            margin-top: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-        }
-
-        .members-list li {
-            background-color: var(--secondary-color);
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid #444;
-        }
-
-        /* Discography & Songs */
-        .songs-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .song-card {
-            background-color: var(--bg-card);
-            padding: 25px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .song-card:hover {
-            transform: translateY(-5px);
-            background-color: #252525;
-        }
-
-        .song-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-
-        .album-info {
-            font-size: 0.9rem;
-            color: #888;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .lyrics-snippet {
-            font-family: 'Courier New', monospace;
-            background-color: rgba(0,0,0,0.3);
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 0.9rem;
-            color: #ddd;
-        }
-
-        /* Timeline / Legacy */
-        .timeline {
-            border-left: 2px solid var(--primary-color);
-            padding-left: 20px;
-            margin-left: 10px;
-        }
-
-        .timeline-item {
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            width: 15px;
-            height: 15px;
-            background-color: var(--primary-color);
-            border-radius: 50%;
-            position: absolute;
-            left: -29px;
-            top: 5px;
-        }
-
-        .year {
-            font-weight: bold;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-            border-top: 1px solid #333;
-        }
-
-        footer p {
-            color: #777;
-            font-size: 0.9rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>App de Estudio INACAP - Monitoreo de Condición</title>
+  <style>
+    :root {
+      --bg: #f3f4f6; --surface: #ffffff; --text: #1f2937; --text-muted: #6b7280;
+      --primary: #dc2626; --primary-hover: #b91c1c; --border: #e5e7eb;
+      --success: #10b981; --success-bg: #d1fae5; --danger: #ef4444; --danger-bg: #fee2e2;
+      --warning: #f59e0b; --nav-bg: #ffffff; --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --xp-color: #8b5cf6;
+    }
+    [data-theme="dark"] {
+      --bg: #111827; --surface: #1f2937; --text: #f9fafb; --text-muted: #9ca3af;
+      --primary: #ef4444; --primary-hover: #f87171; --border: #374151;
+      --nav-bg: #1f2937; --success: #34d399; --success-bg: rgba(16, 185, 129, 0.15);
+      --danger: #f87171; --danger-bg: rgba(239, 68, 68, 0.15); --warning: #fbbf24;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+    }
+    * { box-sizing: border-box; transition: background-color 0.2s, color 0.2s; -webkit-tap-highlight-color: transparent; }
+    body { margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); padding-bottom: 70px; overflow-x: hidden; }
+    .top-bar { background: var(--nav-bg); padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid var(--border); }
+    .xp-badge { background: var(--xp-color); color: white; padding: 4px 12px; border-radius: 999px; font-weight: bold; font-size: 13px; display: flex; align-items: center; gap: 5px; }
+    .container { max-width: 800px; margin: 20px auto; padding: 0 15px; }
+    h1, h2, h3 { margin-top: 0; }
+    .sub { color: var(--text-muted); font-size: 14px; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 20px; }
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 16px; cursor: pointer; box-shadow: var(--shadow); display: flex; flex-direction: column; justify-content: center; position: relative; }
+    .card:active { transform: scale(0.98); }
+    .badge { align-self: flex-start; font-size: 11px; padding: 4px 10px; border-radius: 999px; margin-bottom: 8px; font-weight: bold; background: var(--primary); color: white; }
+    .btn { width: 100%; border: none; border-radius: 12px; padding: 14px; cursor: pointer; font-weight: bold; font-size: 15px; margin-bottom: 10px; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text); }
+    .diff-selector { width: 100%; padding: 12px; border-radius: 12px; border: 2px solid var(--primary); background: var(--surface); color: var(--text); font-weight: bold; margin-bottom: 20px; font-size: 16px; outline: none;}
+    .question-box { background: var(--surface); padding: 20px; border-radius: 16px; margin-bottom: 15px; border: 1px solid var(--border); }
+    .option { width: 100%; text-align: left; padding: 16px; margin-bottom: 10px; border-radius: 12px; border: 2px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-size: 15px; }
+    .option.correct { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+    .option.wrong { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+    .explanation { background: var(--surface); border-left: 4px solid var(--primary); padding: 15px; border-radius: 0 12px 12px 0; font-size: 14px; }
+    .progress-bar-container { width: 100%; height: 8px; background: var(--border); border-radius: 4px; margin-bottom: 15px; overflow: hidden; }
+    .progress-bar-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s ease; }
+    .bottom-nav { position: fixed; bottom: 0; width: 100%; background: var(--nav-bg); display: flex; justify-content: space-around; align-items: center; padding: 10px 0 calc(10px + env(safe-area-inset-bottom)); box-shadow: 0 -2px 10px rgba(0,0,0,0.05); border-top: 1px solid var(--border); z-index: 1000; }
+    .bottom-nav button { background: none; border: none; color: var(--text-muted); font-size: 10px; display: flex; flex-direction: column; align-items: center; gap: 4px; cursor: pointer; width: 25%; }
+    .bottom-nav button.active-tab { color: var(--primary); font-weight: bold; }
+    .nav-icon { font-size: 20px; }
+    .section { display: none; animation: fadeIn 0.3s ease; }
+    .active { display: block; }
+    .hidden { display: none !important; }
+    .diff-badge { font-size: 10px; padding: 3px 8px; border-radius: 4px; float: right; font-weight: bold; }
+    .facil { background: var(--success); color: white; }
+    .medio { background: var(--warning); color: black; }
+    .dificil { background: var(--danger); color: white; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
 </head>
 <body>
+  <div class="top-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <strong style="font-size: 18px;">🚜 App INACAP</strong>
+      <button onclick="toggleTheme()" style="background:none; border:none; font-size: 20px; cursor:pointer;">🌗</button>
+    </div>
+    <div class="xp-badge" id="xpDisplay">✨ Nivel 1</div>
+  </div>
 
-    <header>
-        <span class="badge">Historia del Hip Hop Colombiano</span>
-        <h1>Rauliman</h1>
-        <h2>El primer MC en grabar un álbum de Rap en Colombia</h2>
-        <p style="color: #ddd; max-width: 600px;">Desde Buenaventura para el mundo. La leyenda de <strong>Los Generales R&R</strong>.</p>
-    </header>
+  <div class="container">
+    <section id="homeSection" class="section active">
+      <h2>Monitoreo de Condición</h2>
+      <p class="sub">Selecciona la dificultad y la unidad a estudiar.</p>
 
-    <nav>
-        <ul>
-            <li><a href="#biografia">Biografía</a></li>
-            <li><a href="#los-generales">Los Generales R&R</a></li>
-            <li><a href="#discografia">Canciones Clave</a></li>
-            <li><a href="#legado">Legado</a></li>
-        </ul>
-    </nav>
+      <label style="font-weight: bold; margin-bottom: 5px; display: block;">Dificultad del Examen:</label>
+      <select id="diffSelector" class="diff-selector">
+        <option value="progresivo">🔥 Progresivo (De fácil a exóticas)</option>
+        <option value="facil">🟢 Solo Fáciles (Para calentar)</option>
+        <option value="medio">🟡 Nivel Medio (Estándar)</option>
+        <option value="dificil">🔴 Solo Difíciles (Exóticas para los valientes)</option>
+        <option value="mixto">🔀 Mixto (Al azar total)</option>
+      </select>
 
-    <section id="biografia" class="container">
-        <h3>La Historia de un Pionero</h3>
-        <div class="bio-grid">
-            <div class="bio-text">
-                <p>Mientras que la historia popular suele citar a grupos de Bogotá o Medellín a mediados de los 90, la verdadera génesis del rap grabado en Colombia tiene lugar en el Pacífico, específicamente en <strong>Buenaventura</strong>.</p>
-                <p><strong>Rauliman</strong> (Raúl Iman) es reconocido como uno de los primeros, si no el primer, artista en consolidar un proyecto de rap serio en el país. Influenciado por los sonidos que llegaban al puerto desde Estados Unidos y por la cultura de los polizones que traían cassettes de N.W.A. y Public Enemy, Rauliman comenzó a adaptar esos ritmos a la realidad colombiana.</p>
-                <p>En <span class="highlight">1991</span>, mucho antes del boom comercial del género en la capital, Rauliman y su grupo ya estaban experimentando con rimas, creando un sonido autóctono que mezclaba la crudeza del rap norteamericano con el sabor y la jerga del Valle del Cauca.</p>
-            </div>
-            <div style="background-color: #333; height: 300px; display: flex; align-items: center; justify-content: center; border-radius: 10px; color: #555;">
-                <p style="text-align: center; padding: 20px;">[Espacio para foto histórica de Rauliman en Buenaventura]</p>
-            </div>
-        </div>
+      <div class="grid">
+        <div class="card" onclick="startQuiz('week2')"><div class="badge">Semana 2</div><strong>Fallos Mecánicos</strong></div>
+        <div class="card" onclick="startQuiz('week4_1')"><div class="badge">Semana 4</div><strong>Análisis AMEF</strong></div>
+        <div class="card" onclick="startQuiz('week4_2')"><div class="badge">Semana 4</div><strong>Ensayos END</strong></div>
+        <div class="card" onclick="startQuiz('week5')"><div class="badge">Semana 5</div><strong>Industria 4.0</strong></div>
+      </div>
+      <div class="card" style="border-color: var(--primary); margin-bottom: 15px;" onclick="startQuiz('all')">
+        <div class="badge" style="background: var(--text);">Modo Dios 👑</div><strong>Simulacro General (Toda la materia)</strong>
+      </div>
+      <div class="card" style="border-color: var(--warning);" onclick="startQuiz('mistakes')">
+        <div class="badge" style="background: var(--warning); color: black;">Repaso Inteligente 🧠</div><strong>Preguntas en las que fallaste antes</strong>
+      </div>
     </section>
 
-    <section id="los-generales" class="container">
-        <h3>Los Generales R&R</h3>
-        <div class="group-card">
-            <p>Rauliman no estaba solo. Lideró la agrupación <strong>Los Generales R&R</strong>, el quinteto que sentó las bases del movimiento.</p>
-            <p>Se dice que fueron tan populares en la región que llegaron a ser comparados localmente con fenómenos como los Jackson 5 por su energía en tarima. Fueron pioneros en la estética del Hip Hop: ropa ancha, actitud y, según cuentan las leyendas locales, fueron los primeros en llevar una limusina a Buenaventura para sus shows.</p>
-            
-            <h4 style="margin-top: 20px; color: var(--primary-color);">Integrantes Originales:</h4>
-            <ul class="members-list">
-                <li>🎤 Rauliman</li>
-                <li>🎤 Propio Way</li>
-                <li>🎤 Jhonky Barry</li>
-                <li>🎤 Chiky Bryant</li>
-                <li>🎤 Johnny Yeng</li>
-            </ul>
-        </div>
+    <section id="quizSection" class="section">
+      <div class="progress-bar-container"><div class="progress-bar-fill" id="quizProgressBar"></div></div>
+      <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-size: 14px; font-weight: bold;">
+        <span id="quizProgressText">1/10</span>
+        <span id="qDiffBadge" class="diff-badge"></span>
+      </div>
+      <div class="question-box"><h3 id="questionText" style="margin: 0; line-height: 1.4;"></h3></div>
+      <div id="optionsArea"></div>
+      <div id="explanationArea" class="explanation hidden" style="margin-bottom: 15px;"></div>
+      <button class="btn btn-primary hidden" id="btnNext" onclick="nextQuestion()">Siguiente Pregunta →</button>
     </section>
 
-    <section id="discografia" class="container">
-        <h3>Canciones Emblemáticas</h3>
-        <p style="margin-bottom: 30px; color: #ccc;">El trabajo más recordado es el álbum (LP/Cassette) titulado <strong>"Tremendo Cup"</strong> (circa 1993), aunque sus grabaciones iniciaron antes. Aquí sus temas más representativos:</p>
-        
-        <div class="songs-grid">
-            <div class="song-card">
-                <div class="song-title">Hambre y Desempleo</div>
-                <div class="album-info">Álbum: Tremendo Cup (1993)</div>
-                <p>Quizás su tema más consciente y social. Una crítica cruda a la situación económica de Buenaventura y Colombia.</p>
-                <br>
-                <div class="lyrics-snippet">
-                    "¿Y así quieren que en Colombia haya paz?<br>
-                    ¿Si a los desempleados nos tiran para atrás?"
-                </div>
-            </div>
-
-            <div class="song-card">
-                <div class="song-title">Comprensión de una Amistad</div>
-                <div class="album-info">Época: Inicios de los 90</div>
-                <p>Un "storytelling" clásico del rap. Narra una historia de traición amorosa entre amigos, con un diálogo dramático y una resolución moral, muy al estilo del rap vieja escuela.</p>
-            </div>
-
-            <div class="song-card">
-                <div class="song-title">Brustico</div>
-                <div class="album-info">Estilo: Party Rap</div>
-                <p>Muestra la faceta festiva del grupo. Un tema diseñado para las fiestas, el baile y el disfrute, influenciado por el "Miami Bass" y el rap bailable de la época.</p>
-            </div>
-
-            <div class="song-card">
-                <div class="song-title">Tema a Freddy Williams</div>
-                <div class="album-info">Homenaje</div>
-                <p>Una canción dedicada a una figura local, mostrando la conexión del grupo con los personajes y la realidad social de su entorno inmediato en el puerto.</p>
-            </div>
-        </div>
+    <section id="resultsSection" class="section text-center">
+      <div class="card" style="text-align: center; padding: 40px 20px;">
+        <div id="resEmoji" style="font-size: 60px; margin-bottom: 10px;">🏆</div>
+        <h1 id="resScore" style="font-size: 48px; color: var(--primary); margin: 0;">100%</h1>
+        <p class="sub" id="resMsg" style="font-size: 16px; margin-top: 5px;">¡Excelente!</p>
+        <button class="btn btn-primary" style="margin-top: 20px;" onclick="switchTab('homeSection')">Volver al Inicio</button>
+      </div>
     </section>
+  </div>
 
-    <section id="legado" class="container">
-        <h3>Cronología del Legado</h3>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="year">1989 - 1990</div>
-                <p>Inicios en Buenaventura. Rauliman y sus compañeros comienzan a experimentar con pistas de rap norteamericano traídas por marineros.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="year">1991</div>
-                <p>Consolidación de la alineación oficial de <strong>Los Generales R&R</strong>. Comienzan a ganar fama regional.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="year">1993</div>
-                <p>Lanzamiento de <strong>"Tremendo Cup"</strong>. Históricamente considerado uno de los primeros LPs de rap prensados y distribuidos en Colombia, antes del auge capitalino.</p>
-            </div>
-            <div class="timeline-item">
-                <div class="year">Actualidad</div>
-                <p>Rauliman es recordado como una leyenda viva, participando ocasionalmente en documentales y manteniendo viva la memoria del hip hop del Pacífico.</p>
-            </div>
-        </div>
-    </section>
+  <nav class="bottom-nav" id="bottomNav">
+    <button onclick="switchTab('homeSection')" id="tab-homeSection" class="active-tab"><span class="nav-icon">📝</span><span>Test</span></button>
+  </nav>
 
-    <footer>
-        <p>&copy; 2024 Archivo del Hip Hop Colombiano. Homenaje a Rauliman.</p>
-        <p>Diseñado para preservar la historia musical de Buenaventura.</p>
-    </footer>
+  <script>
+    // ==========================================
+    // MEGA BASE DE DATOS INACAP (CLASIFICADA)
+    // ==========================================
+    const db = {
+      week2: { // Fallos mecánicos en maquinaria pesada
+        facil: [
+          { type: "mcq", question: "¿Qué se entiende por 'falla' en maquinaria pesada?", options: ["Un ruido anormal del motor", "Pérdida de funcionalidad parcial o total de una pieza", "La forma en que se rompe una pieza", "El fin de la vida útil según el fabricante"], correct: "Pérdida de funcionalidad parcial o total de una pieza", explanation: "Fallo significa pérdida de funcionalidad." },
+          { type: "mcq", question: "¿Cómo se clasifica una falla que ocurre debido a la evolución progresiva de una condición anómala?", options: ["Falla Súbita", "Falla Completa", "Falla Progresiva", "Falla Parcial"], correct: "Falla Progresiva", explanation: "Se desarrolla con el tiempo, a diferencia de la súbita." },
+          { type: "mcq", question: "¿Cuál es uno de los componentes de transmisión de potencia que más sufre fallas en maquinaria pesada?", options: ["El chasis", "Las cabinas", "Los engranajes", "Los vidrios"], correct: "Los engranajes", explanation: "Los engranajes, junto a ejes y rodamientos, son los componentes críticos de transmisión." },
+          { type: "mcq", question: "¿Qué diferencia principal hay entre un eje y un árbol de transmisión?", options: ["El eje transmite potencia y el árbol no", "El árbol transmite potencia girando, el eje solo soporta peso", "El eje es de metal y el árbol de aleación", "No hay diferencia, son lo mismo"], correct: "El árbol transmite potencia girando, el eje solo soporta peso", explanation: "Un árbol de transmisión está sometido a torsión, el eje no." },
+          { type: "mcq", question: "¿Cuál es una causa típica de falla por 'Pérdida de geometría del diente' en engranajes?", options: ["Fractura frágil", "Desgaste abrasivo", "Agrietamiento en la base", "Falla de motor"], correct: "Desgaste abrasivo", explanation: "El desgaste abrasivo altera la geometría original del diente del engranaje." }
+        ],
+        medio: [
+          { type: "mcq", question: "En el análisis COMTF de rodamientos, ¿cuál de estas es una de las 10 causas más comunes de falla?", options: ["Exceso de revoluciones", "Ingreso de contaminantes", "Falla en la pintura", "Exceso de Torque"], correct: "Ingreso de contaminantes", explanation: "El ingreso de polvo o líquidos es una causa crítica en la tabla COMTF." },
+          { type: "mcq", question: "¿Qué tipo de fractura en un engranaje ocurre sin deformación plástica previa y de forma repentina?", options: ["Fractura Dúctil", "Fractura por Fatiga", "Fractura Frágil", "Picado (Pitting)"], correct: "Fractura Frágil", explanation: "La fractura frágil ocurre de golpe y sin avisar visualmente mediante estiramiento." },
+          { type: "mcq", question: "¿Qué indica el modo de falla 'Falso Brinell' en un rodamiento?", options: ["Daño por exceso de calor inductivo", "Daño causado por vibraciones cuando el rodamiento está estático", "Daño por desgaste de los pernos", "Corrosión galvánica"], correct: "Daño causado por vibraciones cuando el rodamiento está estático", explanation: "Las vibraciones de otras máquinas cercanas marcan las pistas del rodamiento estático." },
+          { type: "mcq", question: "Si un rodamiento presenta 'Decoloración y deformación elástica', ¿cuál es la causa más probable?", options: ["Humedad excesiva", "Sobrecarga de tensión", "Montaje a exceso de temperatura", "Falta de lubricación"], correct: "Montaje a exceso de temperatura", explanation: "Usar mal el calentador inductivo deforma la estructura molecular." },
+          { type: "mcq", question: "¿Qué diferencia al 'Picado' del 'Arrancamiento' en la pérdida de geometría de un engranaje?", options: ["El picado es fatiga superficial, el arrancamiento es deformación plástica severa", "El picado es por óxido, el arrancamiento es por impacto", "Ambos son exactamente lo mismo", "El arrancamiento solo ocurre en rodamientos"], correct: "El picado es fatiga superficial, el arrancamiento es deformación plástica severa", explanation: "El picado (pitting) desprende micro partículas por ciclos constantes." }
+        ],
+        dificil: [
+          { type: "mcq", question: "Al estudiar ejes de transmisión, ¿cuál de las siguientes opciones describe un 'flujo plástico por flexión'?", options: ["Una falla súbita donde el eje se parte en dos", "Una deformación permanente donde el eje se dobla pero no se rompe debido a una sobrecarga estática transversal", "Una corrosión severa en el asiento del rodamiento", "El desprendimiento de virutas de metal"], correct: "Una deformación permanente donde el eje se dobla pero no se rompe debido a una sobrecarga estática transversal", explanation: "Flujo plástico implica deformación permanente sin llegar a la zona de rotura." },
+          { type: "mcq", question: "Según la norma ISO 15243:2017 mencionada en el recurso, ¿cómo se clasifica principalmente el daño en rodamientos?", options: ["Por marcas comerciales", "Por daños y fallas estructurales estandarizadas a nivel global", "Por tamaño de la pista de rodadura", "Por el tipo de lubricante usado"], correct: "Por daños y fallas estructurales estandarizadas a nivel global", explanation: "La ISO 15243 es el estándar internacional para tipificar modos de falla en rodamientos." },
+          { type: "mcq", question: "Si un eje de transmisión presenta estrías o 'marcas de playa' (beach marks) que avanzan hacia el centro con una zona final rugosa, ¿qué falla ocurrió?", options: ["Fractura por impacto único", "Corrosión por fricción", "Fatiga mecánica por esfuerzos cíclicos", "Desgaste adhesivo"], correct: "Fatiga mecánica por esfuerzos cíclicos", explanation: "Las marcas de playa son la huella digital indiscutible de la propagación de una grieta por fatiga." },
+          { type: "mcq", question: "¿Qué es el 'Ludimiento' (Fretting) en ejes de maquinaria pesada?", options: ["Un desgaste mecánico y corrosivo generado por micro-movimientos oscilatorios entre superficies en contacto ajustado", "Una fractura por torsión extrema", "El sobrecalentamiento del lubricante", "El pandeo de una lámina metálica"], correct: "Un desgaste mecánico y corrosivo generado por micro-movimientos oscilatorios entre superficies en contacto ajustado", explanation: "El ludimiento es crítico en uniones por interferencia sometidas a vibración." }
+        ]
+      },
+      week4_1: { // Análisis de modos y efectos de falla (AMEF)
+        facil: [
+          { type: "mcq", question: "¿Qué significan las siglas AMEF o FMEA?", options: ["Análisis de Motores y Elementos Frágiles", "Análisis de Modo y Efectos de Falla", "Asociación Mecánica de Evaluación de Fatiga", "Acción de Mejoramiento en Engranajes y Fundiciones"], correct: "Análisis de Modo y Efectos de Falla", explanation: "En inglés: Failure Mode and Effects Analysis." },
+          { type: "mcq", question: "¿Cuál es el objetivo principal de aplicar un AMEF?", options: ["Despedir al personal de mantenimiento", "Mejorar la calidad, fiabilidad y seguridad de los activos evitando fallos", "Comprar repuestos más baratos", "Acelerar la producción de la máquina"], correct: "Mejorar la calidad, fiabilidad y seguridad de los activos evitando fallos", explanation: "Es un método predictivo y preventivo." },
+          { type: "mcq", question: "¿Qué significa la 'C' cuando se habla de FMECA?", options: ["Cálculo", "Confiabilidad", "Criticalidad (Criticality)", "Consecuencia"], correct: "Criticalidad (Criticality)", explanation: "Añade un análisis matemático de qué tan crítico es el fallo para el sistema." },
+          { type: "mcq", question: "¿Cuántos pasos principales se recomiendan para armar la tabla de análisis AMEF?", options: ["3", "5", "7", "10"], correct: "7", explanation: "Desde definir los modos de fallo hasta el cálculo final del NPR." },
+          { type: "mcq", question: "¿Qué evalúa el factor 'G' en la tabla AMEF?", options: ["Gastos de reparación", "Gravedad o impacto del fallo", "Garantía del fabricante", "Geometría de la pieza"], correct: "Gravedad o impacto del fallo", explanation: "G = Gravedad. Define qué tan destructivas son las consecuencias." }
+        ],
+        medio: [
+          { type: "mcq", question: "De acuerdo a la tabla de índices, ¿Qué significa una Detección (D) con un valor de 10?", options: ["El problema es evidente y se detectará seguro", "Falla oculta; no se detectará o no hay programa de verificación", "El equipo explotará", "No hay gravedad"], correct: "Falla oculta; no se detectará o no hay programa de verificación", explanation: "Un número 10 en detección es lo peor, significa que no te darás cuenta hasta que la máquina falle." },
+          { type: "mcq", question: "¿Cómo se calcula el NPR (Número de Prioridad de Riesgo)?", options: ["Gravedad + Frecuencia + Detección", "Gravedad x Frecuencia", "Gravedad x Frecuencia x Detección", "(Gravedad x Frecuencia) / Detección"], correct: "Gravedad x Frecuencia x Detección", explanation: "NPR = G x F x D. Ayuda a rankear qué reparar primero." },
+          { type: "mcq", question: "¿Cuál es un tipo de AMEF utilizado para analizar la manufactura y ensamblaje?", options: ["AMEF de Proyecto", "AMEF de Procesos", "AMEF Funcional", "AMEF de Transporte"], correct: "AMEF de Procesos", explanation: "El AMEF de Procesos se centra en las fases de producción y montaje." },
+          { type: "mcq", question: "En el ejemplo del camión minero, si el modo de falla es 'Filtro de aire obstruido', ¿cuál es el 'Efecto' directo registrado en la tabla?", options: ["Pérdida de presión de neumáticos", "Consumo excesivo de combustible y pérdida de potencia", "Rotura del cigüeñal", "Falla del motor de arranque"], correct: "Consumo excesivo de combustible y pérdida de potencia", explanation: "La obstrucción corta el flujo de oxígeno empobreciendo la mezcla y forzando el motor." },
+          { type: "mcq", question: "¿Cuál es una debilidad o limitación del sistema AMEF?", options: ["Es demasiado rápido de hacer", "Los tres factores (G,F,D) tienen el mismo peso matemático, lo que puede dar un análisis simplista", "No permite calcular frecuencias", "Solo se aplica a automóviles"], correct: "Los tres factores (G,F,D) tienen el mismo peso matemático, lo que puede dar un análisis simplista", explanation: "Un fallo de alta gravedad pero muy detectable podría dar el mismo NPR que un fallo leve pero indetectable, lo cual es peligroso." }
+        ],
+        dificil: [
+          { type: "mcq", question: "Según la tabla de valoración de índices AMEF (Notas FMA), ¿qué criterio define a una Gravedad de nivel 9 a 10 (Muy Alto)?", options: ["Detención menor a 1 hora", "Fallas ocasionales 1 vez por mes", "Provoca detenciones de equipos y procesos productivos mayores a 8 horas", "La falla se detecta con toda certeza"], correct: "Provoca detenciones de equipos y procesos productivos mayores a 8 horas", explanation: "Las detenciones que superan un turno completo de trabajo se consideran de máxima gravedad." },
+          { type: "mcq", question: "Si un inyector falla por 'Combustible no adecuado', se asignó una Gravedad de 9, Frecuencia 1, y Detección 8. ¿Cuál es el NPR y qué indica?", options: ["NPR 18, falla leve", "NPR 72, es el fallo más crítico que requiere prioridad alta", "NPR 8, no hay que hacer nada", "NPR 72, pero el filtro de aire es más importante"], correct: "NPR 72, es el fallo más crítico que requiere prioridad alta", explanation: "9 x 1 x 8 = 72. En el ejemplo del camión, es el valor más alto y por ende la mayor prioridad de mantención." },
+          { type: "mcq", question: "¿En qué década y en qué país comenzó el desarrollo e implementación del FMEA en la industria aeroespacial?", options: ["Alemania, años 80", "Japón, años 30", "Estados Unidos, años 50 (implementado por la NASA en los 60)", "Reino Unido, años 20"], correct: "Estados Unidos, años 50 (implementado por la NASA en los 60)", explanation: "El ejército de EE.UU y la NASA durante el programa Apolo fueron los pioneros de esta metodología." },
+          { type: "mcq", question: "En la metodología AMEF, ¿por qué es problemático que no se detecte un problema potencial (falla oculta) en relación al índice de riesgo?", options: ["Porque el índice de riesgo bajará erróneamente en el cálculo", "Porque si se subestima la gravedad, el índice de riesgo se mantendrá artificialmente bajo ignorando crisis inminentes", "Porque el NPR será cero", "Porque no se puede multiplicar por letras"], correct: "Porque si se subestima la gravedad, el índice de riesgo se mantendrá artificialmente bajo ignorando crisis inminentes", explanation: "La falla humana en estimar la detección o gravedad hace que problemas catastróficos no salten en las alarmas del AMEF." }
+        ]
+      },
+      week4_2: { // Ensayos no destructivos (END)
+        facil: [
+          { type: "mcq", question: "¿Qué son los Ensayos No Destructivos (END)?", options: ["Pruebas de choque que rompen el material para medir resistencia", "Métodos para examinar materiales sin causarles daños que imposibiliten su uso", "Pruebas químicas para fundir metales", "Ensayos exclusivos para plásticos"], correct: "Métodos para examinar materiales sin causarles daños que imposibiliten su uso", explanation: "Buscan inspeccionar la integridad sin destruir la pieza." },
+          { type: "mcq", question: "¿Cuál es el ensayo END más antiguo, utilizado y económico?", options: ["Ultrasonido", "Rayos X", "Inspección Visual", "Tintas Penetrantes"], correct: "Inspección Visual", explanation: "Es el primer filtro y la base de cualquier mantenimiento, solo usa la vista humana." },
+          { type: "mcq", question: "En un ensayo de Tintas Penetrantes, ¿cuál es el primer paso obligatorio?", options: ["Aplicar el líquido rojo", "Aplicar el revelador blanco", "Limpieza exhaustiva del material de ensayo", "Inspeccionar con luz ultravioleta"], correct: "Limpieza exhaustiva del material de ensayo", explanation: "Si hay suciedad o grasa en la fisura, el líquido no entrará." },
+          { type: "mcq", question: "¿Qué propiedad debe tener un líquido penetrante para meterse en grietas minúsculas?", options: ["Alta viscosidad", "Baja tensión superficial (alta capacidad de mojado)", "Ser extremadamente corrosivo", "Secado instantáneo"], correct: "Baja tensión superficial (alta capacidad de mojado)", explanation: "La baja tensión superficial permite que el líquido se escurra por capilaridad en las grietas." },
+          { type: "mcq", question: "¿Qué tipo de líquido penetrante se debe observar bajo una lámpara de luz negra (ultravioleta)?", options: ["Tipo I: Penetrantes fluorescentes", "Tipo II: Penetrantes visibles o coloreados", "Revelador en polvo", "Emulsificador hidrofílico"], correct: "Tipo I: Penetrantes fluorescentes", explanation: "Los fluorescentes brillan al ser expuestos a rayos UV." }
+        ],
+        medio: [
+          { type: "mcq", question: "Conceptualmente en END, ¿cuál es la diferencia entre 'Discontinuidad' y 'Defecto'?", options: ["Son sinónimos exactos", "Todo defecto es una discontinuidad, pero no toda discontinuidad es un defecto que rechaza la pieza", "El defecto solo ocurre en fundiciones, la discontinuidad en soldaduras", "La discontinuidad siempre rompe la pieza"], correct: "Todo defecto es una discontinuidad, pero no toda discontinuidad es un defecto que rechaza la pieza", explanation: "Una discontinuidad es solo una alteración. Si supera los límites de tolerancia de la norma, recién ahí se clasifica como 'Defecto'." },
+          { type: "mcq", question: "Si necesitas inspeccionar internamente las válvulas de un motor diésel sin desarmarlo, ¿qué tipo de END visual aplicarías?", options: ["Inspección visual directa con lupa", "Inspección visual remota usando boroscopios o endoscopios flexibles", "Tintas penetrantes lavables en agua", "Partículas magnéticas"], correct: "Inspección visual remota usando boroscopios o endoscopios flexibles", explanation: "La inspección remota usa cámaras por fibra óptica para llegar donde el ojo no puede." },
+          { type: "mcq", question: "¿Qué función cumple el 'Revelador' en el ensayo de tintas penetrantes?", options: ["Lavar la pieza", "Oxidar el metal", "Actuar como un papel secante que absorbe y extrae el penetrante atrapado en las fisuras", "Sellar la grieta para siempre"], correct: "Actuar como un papel secante que absorbe y extrae el penetrante atrapado en las fisuras", explanation: "El revelador (usualmente polvo blanco) saca la tinta roja hacia la superficie para hacer visible la falla." },
+          { type: "mcq", question: "Una desventaja crítica del ensayo de líquidos penetrantes es:", options: ["Es muy costoso", "Solo detecta fallas superficiales abiertas a la superficie", "No sirve en metales ferrosos", "Genera radiación peligrosa"], correct: "Solo detecta fallas superficiales abiertas a la superficie", explanation: "Si la grieta es interna y no toca la superficie, el líquido no tiene por dónde entrar." },
+          { type: "mcq", question: "¿Cuánto es el tiempo de permanencia general (penetration time) sugerido para que el líquido penetrante actúe?", options: ["10 segundos", "Generalmente entre 5 y 30 minutos", "Más de 24 horas", "Depende exclusivamente del color del líquido"], correct: "Generalmente entre 5 y 30 minutos", explanation: "Requiere tiempo para que la acción capilar haga efecto en el fondo de la grieta." }
+        ],
+        dificil: [
+          { type: "mcq", question: "Según los métodos de eliminación del exceso de líquido penetrante, ¿qué caracteriza al Método D (Post emulsificable hidrofílico)?", options: ["Se lava directamente con agua a presión", "Requiere aplicar un emulsificador a base de agua antes de lavar, para hacer soluble la tinta superficial sin lavar la que está dentro de la grieta", "Usa solventes altamente inflamables", "Se limpia únicamente con arena"], correct: "Requiere aplicar un emulsificador a base de agua antes de lavar, para hacer soluble la tinta superficial sin lavar la que está dentro de la grieta", explanation: "Es un método altamente sensible y controlado usado en piezas aeroespaciales o críticas." },
+          { type: "mcq", question: "Bajo la normativa estandarizada, ¿qué organización rige las prácticas estándar para los Ensayos No Destructivos mencionada en los recursos?", options: ["Organización Mundial de la Salud", "Norma ASTM (ej: ASTM E316)", "SAE Internacional", "Ministerio de Minería"], correct: "Norma ASTM (ej: ASTM E316)", explanation: "La ASTM (American Society for Testing and Materials) regula estrictamente los procedimientos de los END." },
+          { type: "mcq", question: "¿Por qué un ensayo de tintas penetrantes fallaría categóricamente si se aplica sobre una pieza de hierro fundido recubierta con pintura epóxica intacta?", options: ["Porque el hierro repele la tinta", "Porque la pintura sella las discontinuidades del metal base impidiendo el ingreso del penetrante", "Porque la pintura disuelve el revelador", "No fallaría, funcionaría perfectamente"], correct: "Porque la pintura sella las discontinuidades del metal base impidiendo el ingreso del penetrante", explanation: "La superficie debe estar 100% desnuda y libre de recubrimientos (pinturas, cromados) o la grieta estará tapada." },
+          { type: "mcq", question: "En un diagrama de flujo de inspección visual, ¿cuál es la etapa que sigue inmediatamente a la 'Observación'?", options: ["Limpieza final", "Preparación de la superficie", "Interpretación (y posterior evaluación)", "Aplicación de reactivos"], correct: "Interpretación (y posterior evaluación)", explanation: "Una vez que observas la anomalía, debes interpretarla (¿qué es esto?) y evaluarla (¿supera la norma de rechazo?)." }
+        ]
+      },
+      week5: { // Industria 4.0 en maquinaria pesada
+        facil: [
+          { type: "mcq", question: "¿A qué se refiere el término 'Industria 4.0'?", options: ["Al uso de la máquina de vapor", "A la cuarta revolución industrial impulsada por la tecnología digital, IoT y procesamiento de datos", "A la creación de la línea de ensamblaje de Ford", "A la industria petrolera exclusivamente"], correct: "A la cuarta revolución industrial impulsada por la tecnología digital, IoT y procesamiento de datos", explanation: "Es el paso hacia las 'fábricas y maquinarias inteligentes'." },
+          { type: "mcq", question: "¿Qué tendencia tecnológica busca crear representaciones virtuales exactas de las máquinas y obras?", options: ["Robótica", "Gemelos Digitales y BIM", "5G", "Hidrógeno"], correct: "Gemelos Digitales y BIM", explanation: "Permiten simular el comportamiento de la máquina antes de construirla o usarla físically." },
+          { type: "mcq", question: "¿Cuál de estos combustibles es considerado la principal alternativa verde (cero emisiones) para los motores del futuro en maquinaria pesada?", options: ["Diésel de ultra bajo azufre", "Gas natural licuado", "Hidrógeno (Pilas de combustible)", "Carbón coque"], correct: "Hidrógeno (Pilas de combustible)", explanation: "El hidrógeno genera electricidad y su único residuo es vapor de agua." },
+          { type: "mcq", question: "¿Qué rol juega la conectividad 5G en el futuro de la maquinaria pesada?", options: ["Solo para escuchar música en la cabina", "Permitir la teleoperación a kilómetros de distancia con latencia ínfima (sin retraso)", "Aumentar el consumo de batería", "Enfriar los sistemas hidráulicos"], correct: "Permitir la teleoperación a kilómetros de distancia con latencia ínfima (sin retraso)", explanation: "El 5G transfiere enormes cantidades de datos en tiempo real, vital para máquinas a control remoto." },
+          { type: "mcq", question: "¿Qué significa 'automatización de procesos constructivos'?", options: ["Usar palas manuales", "Que la máquina realice tareas repetitivas o peligrosas por sí misma, guiada por IA o sensores", "Reemplazar al humano por caballos", "Apagar el motor automáticamente"], correct: "Que la máquina realice tareas repetitivas o peligrosas por sí misma, guiada por IA o sensores", explanation: "Reduce el error humano y aumenta la seguridad." }
+        ],
+        medio: [
+          { type: "mcq", question: "¿Qué es el 'Concept-X' desarrollado por Doosan?", options: ["Un modelo antiguo de tractor", "Un prototipo de excavadora diésel", "Una solución integral de sitio de construcción automatizado sin operadores a bordo", "Un dron para topografía superficial"], correct: "Una solución integral de sitio de construcción automatizado sin operadores a bordo", explanation: "Es el futuro de la obra pública: equipos 100% controlados por inteligencia artificial y sistemas en la nube." },
+          { type: "mcq", question: "En relación a las innovaciones de Volvo, ¿qué es el LX03?", options: ["Un camión de volteo articulado", "Un concepto de cargador eléctrico autónomo inspirado en un modelo de LEGO", "Un martillo hidráulico", "Una torre de iluminación"], correct: "Un concepto de cargador eléctrico autónomo inspirado en un modelo de LEGO", explanation: "El LX03 demuestra la capacidad de fabricar inteligencia de enjambre." },
+          { type: "mcq", question: "El sistema 'DIG Assist' de la excavadora Volvo EC380EL tiene como principal ventaja:", options: ["Conducir sola por la carretera", "Eliminar la necesidad de comprobar la profundidad manualmente, aumentando la productividad hasta un 50%", "Aumentar el gasto de combustible", "Levantar el doble de peso físico"], correct: "Eliminar la necesidad de comprobar la profundidad manualmente, aumentando la productividad hasta un 50%", explanation: "Un sistema de pantalla táctil guía al operador con precisión milimétrica." },
+          { type: "mcq", question: "¿Qué componente mecánico tradicional ha sido eliminado en la miniexcavadora eléctrica Komatsu operada a control remoto?", options: ["Las orugas", "El sistema hidráulico (reemplazado por cilindros eléctricos)", "La cuchara", "El chasis"], correct: "El sistema hidráulico (reemplazado por cilindros eléctricos)", explanation: "Es un equipo 100% eléctrico, no requiere aceite hidráulico ni mantenimiento de mangueras." },
+          { type: "mcq", question: "¿A qué se refiere la 'descarbonización de una obra'?", options: ["Lavar el carbón antes de usarlo", "Extraer solo carbón en minería", "Adaptar la maquinaria para que opere con cero emisiones de gases de efecto invernadero", "Pintar las máquinas de blanco"], correct: "Adaptar la maquinaria para que opere con cero emisiones de gases de efecto invernadero", explanation: "Es una respuesta a las normativas medioambientales globales." }
+        ],
+        dificil: [
+          { type: "mcq", question: "¿Cómo se integra la Inteligencia Artificial en el concepto de 'mantenimiento 4.0' de la maquinaria pesada?", options: ["Programa las revisiones manuales en un calendario de papel", "Otorga capacidades cognitivas a la máquina para autodiagnosticarse, predecir fallas y decidir acciones de forma autónoma", "Solo sirve para encender el motor con la voz", "Cambia el aceite automáticamente"], correct: "Otorga capacidades cognitivas a la máquina para autodiagnosticarse, predecir fallas y decidir acciones de forma autónoma", explanation: "La IA analiza Big Data de sensores en tiempo real para predecir el fallo antes de que ocurra." },
+          { type: "mcq", question: "¿Qué innovación estructural presenta la plataforma 'XiteCloud' de Hyundai Construction Equipment?", options: ["Un software para contabilidad", "Una plataforma basada en la nube que gestiona integralmente el sitio de construcción en 3D, conectando topografía, planificación y automatización de flotas", "Un tipo nuevo de asiento para operadores", "Un sistema de enfriamiento por agua de mar"], correct: "Una plataforma basada en la nube que gestiona integralmente el sitio de construcción en 3D, conectando topografía, planificación y automatización de flotas", explanation: "Digitaliza completamente la cantera o la obra." },
+          { type: "mcq", question: "Dentro del marco conceptual de la Industria 4.0, ¿cuál es el dilema actual respecto a la evolución del 'concepto de máquina'?", options: ["Si usar neumáticos u orugas", "Si continuar con una evolución tecnológica hacia motores un poco más eficientes o abrirse a nuevos conceptos disruptivos que eliminen la cabina y cambien la morfología de la máquina", "Si pintarlas de amarillo o naranjo", "Si deben pesar 20 o 30 toneladas"], correct: "Si continuar con una evolución tecnológica hacia motores un poco más eficientes o abrirse a nuevos conceptos disruptivos que eliminen la cabina y cambien la morfología de la máquina", explanation: "Las máquinas autónomas como el Volvo LX03 ya no necesitan cabina humana, cambiando radicalmente su diseño." },
+          { type: "mcq", question: "¿Por qué el hidrógeno (pilas de combustible) representa un desafío para la maquinaria pesada frente a los vehículos urbanos?", options: ["Porque no es inflamable", "Porque los equipos pesados tienen un uso intensivo y volumétrico que requiere grandes capacidades de almacenamiento y una red de suministro en zonas remotas de difícil acceso", "Porque el hidrógeno congela los motores", "Porque las baterías de litio son infinitamente mejores para 100 toneladas"], correct: "Porque los equipos pesados tienen un uso intensivo y volumétrico que requiere grandes capacidades de almacenamiento y una red de suministro en zonas remotas de difícil acceso", explanation: "Llevar hidrógeno a una mina en la cordillera es el mayor reto logístico." }
+        ]
+      }
+    };
 
+    // ==========================================
+    // LÓGICA DE LA APLICACIÓN
+    // ==========================================
+    function getQuestionsByDifficulty(weekData, diff) {
+      if (diff === 'facil') return [...weekData.facil];
+      if (diff === 'medio') return [...weekData.medio];
+      if (diff === 'dificil') return [...weekData.dificil];
+      // Progresivo: concatena en orden. Mixto: también las junta pero luego se barajan.
+      return [...weekData.facil, ...weekData.medio, ...weekData.dificil];
+    }
+
+    function startQuiz(week) {
+      const diff = document.getElementById('diffSelector').value;
+      currentBank = [];
+      
+      if (week === 'all') {
+        ['week2', 'week4_1', 'week4_2', 'week5'].forEach(w => {
+          currentBank = currentBank.concat(getQuestionsByDifficulty(db[w], diff));
+        });
+      } else if (week === 'mistakes') {
+        if(mistakes.length === 0) return alert("¡Estás impecable! No tienes errores guardados para repasar. 🏆");
+        currentBank = [...mistakes];
+      } else {
+        currentBank = getQuestionsByDifficulty(db[week], diff);
+      }
+
+      if(currentBank.length === 0) { alert("Error cargando preguntas."); return; }
+
+      // Lógica de barajado:
+      if (diff !== 'progresivo' && week !== 'mistakes') {
+        // En mixto, facil, medio o dificil, barajamos aleatoriamente
+        currentBank.sort(() => Math.random() - 0.5);
+      }
+      // Si es progresivo, se mantienen en orden Facil -> Medio -> Dificil.
+
+      currIdx = 0; score = 0; earnedSessionXP = 0;
+      document.getElementById('bottomNav').classList.add('hidden');
+      switchTab('quizSection');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      let q = currentBank[currIdx];
+      document.getElementById('quizProgressText').innerText = `${currIdx + 1} / ${currentBank.length}`;
+      document.getElementById('quizProgressBar').style.width = `${((currIdx) / currentBank.length) * 100}%`;
+      
+      // Clasificador visual de dificultad del badge
+      let diffClass = ''; let diffText = 'REPASO';
+      for (let w in db) {
+        if (db[w].facil && db[w].facil.find(x => x.question === q.question)) { diffClass = 'facil'; diffText = 'FÁCIL'; break; }
+        if (db[w].medio && db[w].medio.find(x => x.question === q.question)) { diffClass = 'medio'; diffText = 'MEDIO'; break; }
+        if (db[w].dificil && db[w].dificil.find(x => x.question === q.question)) { diffClass = 'dificil'; diffText = 'EXÓTICA 💀'; break; }
+      }
+      
+      let badge = document.getElementById('qDiffBadge');
+      badge.className = `diff-badge ${diffClass}`;
+      badge.innerText = diffText;
+
+      document.getElementById('questionText').innerText = q.question;
+      document.getElementById('btnNext').classList.add('hidden');
+      document.getElementById('explanationArea').classList.add('hidden');
+
+      const optArea = document.getElementById('optionsArea');
+      optArea.innerHTML = "";
+      
+      if(q.type === 'mcq') {
+        document.getElementById('openArea').classList.add('hidden');
+        optArea.classList.remove('hidden');
+        let mixedOpts = [...q.options].sort(() => Math.random() - 0.5);
+        mixedOpts.forEach(opt => {
+          let btn = document.createElement('button');
+          btn.className = 'option'; btn.innerText = opt;
+          btn.onclick = () => evalMcq(btn, opt, q.correct, q.explanation, q);
+          optArea.appendChild(btn);
+        });
+      } else {
+        optArea.classList.add('hidden');
+        document.getElementById('openArea').classList.remove('hidden');
+        document.getElementById('openInput').value = "";
+        document.getElementById('btnShowAnswer').classList.remove('hidden');
+        document.getElementById('evalArea').classList.add('hidden');
+        document.getElementById('modelAnswerText').innerText = q.sampleAnswer;
+      }
+    }
+
+    function evalMcq(btnObj, selected, correct, exp, qObj) {
+      let btns = document.querySelectorAll('.option');
+      btns.forEach(b => {
+        b.disabled = true;
+        if(b.innerText === correct) b.classList.add('correct');
+        if(b.innerText === selected && selected !== correct) b.classList.add('wrong');
+      });
+
+      if(selected === correct) { 
+        score++; addXP(10);
+        mistakes = mistakes.filter(m => m.question !== qObj.question);
+      } else {
+        if(!mistakes.find(m => m.question === qObj.question)) mistakes.push(qObj);
+      }
+      localStorage.setItem('inacap_mistakes', JSON.stringify(mistakes));
+      showFeedback(exp);
+    }
+
+    function revealOpenAnswer() {
+      document.getElementById('btnShowAnswer').classList.add('hidden');
+      document.getElementById('evalArea').classList.remove('hidden');
+    }
+
+    function gradeOpen(isCorrect) {
+      let qObj = currentBank[currIdx];
+      if(isCorrect) {
+        score++; addXP(10);
+        mistakes = mistakes.filter(m => m.question !== qObj.question);
+      } else {
+        if(!mistakes.find(m => m.question === qObj.question)) mistakes.push(qObj);
+      }
+      localStorage.setItem('inacap_mistakes', JSON.stringify(mistakes));
+      document.getElementById('evalArea').classList.add('hidden');
+      showFeedback(qObj.explanation);
+    }
+
+    function showFeedback(text) {
+      document.getElementById('quizProgressBar').style.width = `${((currIdx + 1) / currentBank.length) * 100}%`;
+      let expArea = document.getElementById('explanationArea');
+      expArea.innerHTML = `<strong>Datazo:</strong> ${text}`;
+      expArea.classList.remove('hidden');
+      document.getElementById('btnNext').classList.remove('hidden');
+    }
+
+    function nextQuestion() {
+      currIdx++;
+      if(currIdx < currentBank.length) loadQuestion();
+      else showResults();
+    }
+
+    function showResults() {
+      switchTab('resultsSection');
+      document.getElementById('bottomNav').classList.remove('hidden');
+      let pct = Math.round((score / currentBank.length) * 100);
+      document.getElementById('resScore').innerText = pct + "%";
+      document.getElementById('resEmoji').innerText = pct >= 80 ? "🔥" : pct >= 50 ? "👍" : "💀";
+      document.getElementById('resMsg').innerText = `Acertaste ${score} de ${currentBank.length} preguntas.\nGanaste +${earnedSessionXP} XP.`;
+    }
+  </script>
 </body>
 </html>
-
-

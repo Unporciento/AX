@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Repaso de Matemáticas</title>
+    <title>Prueba Completa INACAP</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
-        /* Diseño pensado para fondo de pantalla de celular (Modo Oscuro) */
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
@@ -19,51 +18,69 @@
         }
         #fondo-estudio {
             width: 100%;
-            max-width: 400px; /* Ancho típico de celular */
-            padding: 20px;
+            max-width: 420px;
+            padding: 15px;
             box-sizing: border-box;
-            background-color: #121212;
+            background-color: #0d1117;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
         .tarjeta {
-            background-color: #1e1e1e;
-            border-left: 5px solid #00a8ff;
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            background-color: #161b22;
+            border-left: 4px solid #58a6ff;
+            border-radius: 6px;
+            padding: 12px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
         }
         .tarjeta h2 {
             margin: 0 0 10px 0;
             font-size: 1.1rem;
-            color: #00a8ff;
+            color: #58a6ff;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 5px;
         }
-        .tarjeta p {
-            margin: 5px 0;
+        .item {
+            margin-bottom: 8px;
             font-size: 0.95rem;
-            line-height: 1.4;
+            line-height: 1.3;
         }
-        .resaltado {
-            color: #4cd137;
+        .pregunta {
+            color: #8b949e;
+            font-size: 0.85rem;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .respuesta {
+            color: #3fb950;
             font-weight: bold;
+            font-size: 1.05rem;
+        }
+        .formula {
+            background-color: #0d1117;
+            padding: 5px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #ff7b72;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 10px;
         }
         #btn-captura {
-            margin: 20px;
-            padding: 15px 30px;
-            font-size: 1.1rem;
+            margin: 20px 0 30px 0;
+            padding: 15px 25px;
+            font-size: 1rem;
             font-weight: bold;
             color: white;
-            background-color: #e84118;
+            background-color: #238636;
             border: none;
-            border-radius: 25px;
-            box-shadow: 0 4px 15px rgba(232, 65, 24, 0.4);
+            border-radius: 8px;
             cursor: pointer;
-            width: 80%;
-            max-width: 300px;
+            width: 90%;
+            max-width: 350px;
         }
         #btn-captura:active {
-            transform: scale(0.98);
+            background-color: #2ea043;
         }
     </style>
 </head>
@@ -72,61 +89,86 @@
     <div id="fondo-estudio">
         
         <div class="tarjeta">
-            <h2>1. Modelo Logístico (Ahorro)</h2>
-            <p>Ecuación: f(x) = p / (1 + q * e^(-rx))</p>
-            <p>Valor de p (Máximo ahorro): <span class="resaltado">30833.55723</span></p>
-            <p>Valor de q: <span class="resaltado">0.29802</span></p>
-            <p>Valor de r: <span class="resaltado">0.11871</span></p>
-            <p>Ahorro en Enero: <span class="resaltado">24380.86466</span></p>
-            <p>Ahorro Total Ene-Nov: <span class="resaltado">285296.9106</span></p>
+            <h2>Pregunta 1: Ahorro Mensual</h2>
+            <div class="formula">f(x) = p / (1 + q * e^(-rx))</div>
+            
+            <div class="item">
+                <span class="pregunta">a) Valores de p, q, r:</span>
+                p = <span class="respuesta">30833.55723</span><br>
+                q = <span class="respuesta">0.29802</span><br>
+                r = <span class="respuesta">0.11871</span>
+            </div>
+            <div class="item">
+                <span class="pregunta">b) Ahorro en Enero del 2024:</span>
+                <span class="respuesta">24380.86466</span> pesos
+            </div>
+            <div class="item">
+                <span class="pregunta">c) Ahorro total (Enero - Noviembre):</span>
+                <span class="respuesta">28529.69106</span> pesos
+            </div>
+            <div class="item">
+                <span class="pregunta">d) Máximo ahorro posible en un mes:</span>
+                <span class="respuesta">30833.55723</span> pesos
+            </div>
         </div>
 
-        <div class="tarjeta">
-            <h2>2. Límites por Tabla y al Infinito</h2>
-            <p>Función: (7x^2 + 54x + 72) / (x^2 - 36)</p>
-            <p>Al evaluar f(-6): <span class="resaltado">Indeterminado (0/0)</span></p>
-            <p>Límite cuando x -> -6: <span class="resaltado">2.5</span></p>
-            <p>Límite cuando x -> Infinito: <span class="resaltado">7</span></p>
+        <div class="tarjeta" style="border-left-color: #d2a8ff;">
+            <h2 style="color: #d2a8ff;">Pregunta 2: Límites por Tabla</h2>
+            <div class="formula">f(x) = (7x² + 54x + 72) / (x² - 36)</div>
+            
+            <div class="item">
+                <span class="pregunta">a) Calcule f(-6):</span>
+                Elija opción: <span class="respuesta">Indeterminado</span>
+            </div>
+            <div class="item">
+                <span class="pregunta">b) Límite cuando x → -6 (por tabla):</span>
+                El límite es: <span class="respuesta">2.5</span>
+            </div>
+            <div class="item">
+                <span class="pregunta">c) Límite cuando x → ∞ (por tabla):</span>
+                El límite es: <span class="respuesta">7</span>
+            </div>
         </div>
 
-        <div class="tarjeta">
-            <h2>3. Continuidad (Tramos)</h2>
-            <p>Límite para que f(x) exista en x=4:</p>
-            <p>Valor de K: <span class="resaltado">-1</span></p>
-            <p>El límite es: <span class="resaltado">9</span></p>
-            <hr style="border-color: #333; margin: 10px 0;">
-            <p>Parámetros para continuidad en todo su dominio:</p>
-            <p>Valor de a: <span class="resaltado">5</span></p>
-            <p>Valor de b: <span class="resaltado">10</span></p>
-            <p>Límite cuando x -> a: <span class="resaltado">11</span></p>
-            <p>Límite cuando x -> b: <span class="resaltado">11</span></p>
+        <div class="tarjeta" style="border-left-color: #ff7b72;">
+            <h2 style="color: #ff7b72;">Pregunta 3: Funciones por Tramos</h2>
+            
+            <div class="item">
+                <span class="pregunta">I) Para que el límite en x=4 exista:</span>
+                a) Valor de K: <span class="respuesta">-1</span><br>
+                b) ¿Cuál es ese límite?: <span class="respuesta">9</span>
+            </div>
+            <hr style="border-color: #30363d; margin: 10px 0;">
+            <div class="item">
+                <span class="pregunta">II) Parámetros para continuidad:</span>
+                c) Valor de a: <span class="respuesta">5</span><br>
+                c) Valor de b: <span class="respuesta">10</span>
+            </div>
+            <div class="item">
+                <span class="pregunta">d) Calcule los siguientes límites:</span>
+                i) lim f(x) cuando x → a: <span class="respuesta">11</span><br>
+                ii) lim f(x) cuando x → b: <span class="respuesta">11</span>
+            </div>
         </div>
 
     </div>
 
-    <button id="btn-captura" onclick="tomarCaptura()">📷 Guardar como Imagen</button>
+    <button id="btn-captura" onclick="tomarCaptura()">📸 Descargar Fondo de Pantalla</button>
 
     <script>
         function tomarCaptura() {
-            // Ocultamos el botón para que no salga en la captura
             const boton = document.getElementById('btn-captura');
             boton.style.display = 'none';
-
-            // Seleccionamos el contenedor de las preguntas
             const elemento = document.getElementById('fondo-estudio');
 
-            // Configuramos html2canvas para mejor calidad en celular
             html2canvas(elemento, { 
                 scale: 3, 
-                backgroundColor: "#121212" 
+                backgroundColor: "#0d1117" 
             }).then(canvas => {
-                // Creamos un enlace temporal para forzar la descarga
                 let enlace = document.createElement('a');
-                enlace.download = 'Repaso_Matematicas.png';
+                enlace.download = 'Respuestas_Prueba_Completas.png';
                 enlace.href = canvas.toDataURL("image/png");
                 enlace.click();
-
-                // Volvemos a mostrar el botón
                 boton.style.display = 'block';
             });
         }
